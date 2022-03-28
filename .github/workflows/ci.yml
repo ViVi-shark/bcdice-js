@@ -33,12 +33,12 @@ jobs:
         key: ${{ runner.os }}-modules-${{ matrix.node-version }}-${{ hashFiles('**/package.lock.json') }}
     - run: npm ci
     - run: npm run clean
-    - run: npm run lint
     - run: BUNDLE_PATH="$(pwd)/vendor/bundle" npm run build
+    - run: npm run lint
     - run: npm test
     - run: npm run example
 
     - run: npm publish
-      if: ${{ matrix.node-version == '10.x' && startsWith(github.ref, 'refs/tags/v') }}
+      if: ${{ matrix.node-version == '16' && startsWith(github.ref, 'refs/tags/v') }}
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
