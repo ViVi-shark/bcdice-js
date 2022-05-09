@@ -1,6 +1,6 @@
 {
   "name": "bcdice",
-  "version": "3.5.1-2022-03-28",
+  "version": "3.6.0-2022-05-09",
   "description": "BCDice ported for JavaScript",
   "keywords": [
     "dice"
